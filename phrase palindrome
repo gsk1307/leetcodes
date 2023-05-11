@@ -1,0 +1,8 @@
+class Solution:
+    def isPalindrome(self, s):
+        s=s.lower() #converstion of lower case
+        a=[ch for ch in s if ch.isalnum()]
+        b=''.join(a)
+        return b==b[::-1]
+
+
