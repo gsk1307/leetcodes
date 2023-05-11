@@ -1,0 +1,7 @@
+class Solution:
+    def deleteDuplicates(self,head):
+        head=[]
+        a=set(head)
+        b=list(a)
+        b.sort()
+        print(head)
