@@ -1,0 +1,9 @@
+class Solution:
+    def removeElements(self,head, val):
+        i = 0
+        while i < len(head):
+            if head[i] == val:
+                head.pop(i)
+            else:
+                i =i + 1
+        return head
