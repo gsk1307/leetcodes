@@ -1,0 +1,6 @@
+class Solution:
+    def invertTree(self, root):
+        root.left,root.right=root.right,root.left #we swap
+        invertTree(root.left)
+        invertTree(root.right)
+        return root
