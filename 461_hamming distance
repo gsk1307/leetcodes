@@ -1,0 +1,11 @@
+class Solution:
+    def hammingDistance(self, x, y):
+        a=bin(x)[2:]
+        b=bin(y)[2:]
+    # Pad binary strings with leading zeros
+        c= max(len(a), len(b))
+        a=a.zfill(c)
+        b=b.zfill(c)
+    # Count differing positions
+        distance = sum(bit_x != bit_y for bit_x, bit_y in zip(a,b))
+        return distance
