@@ -1,0 +1,7 @@
+class Solution:
+    def wordPattern(self, pattern, s):
+        if pattern[::-1]==pattern and s[::-1]==s:
+            return True
+        else:
+            return False
+
