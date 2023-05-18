@@ -1,0 +1,14 @@
+class Solution:
+    def findRestaurant(self, list1, list2):
+        a=[]  #common restuerant
+        minsum=float('inf')
+        for i in range(len(list1)):
+            for j in range(len(list2)):
+                if list1[i]==list2[j]:
+                    current_sum=i+j
+                    if a < minSum:
+                        a = [list1[i]]
+                        minSum = a
+                    elif a == minSum:
+                        a.append(list1[i])
+        return a
