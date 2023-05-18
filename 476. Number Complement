@@ -1,0 +1,11 @@
+class Solution:
+    def findComplement(self, num):
+        a=bin(num)
+        b=str(a)
+        c=b.replace('0','1')
+        d=c.replace('1','0')
+        e=''.join(b)
+        return(int(e,2))
+
+
+        
