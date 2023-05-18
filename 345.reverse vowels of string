@@ -1,0 +1,11 @@
+class Solution:
+    def reverseVowels(self, s):
+        vowels={'a','e','i','o','u','A','E','I','O','U'}
+        a=list(s)
+        vowels_list=[char for char in a if char in vowels]
+        rev_vowels=vowels_list[::-1]
+        for i, char in enumerate(a):
+            if char in vowels:
+                a[i] = rev_vowels.pop(0)
+
+        return ''.join(a)
