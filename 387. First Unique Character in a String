@@ -1,0 +1,7 @@
+class Solution:
+    def firstUniqChar(self, s):
+        a=len(s)
+        for i in range(a):
+            if s.count(s[i]) == 1:
+                return i
+        return -1
