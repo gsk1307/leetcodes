@@ -1,0 +1,17 @@
+#class Solution:
+#   def findLUSlength(self, a, b):
+#       a1=list(a)
+#       b1=list(b)
+#        c=0
+#       for i in range(len(a1)):
+#           if a1[i]==b1[i]:
+#               c=c+1
+#               return c
+#           else:
+#               return -1
+class Solution:
+    def findLUSlength(self, a, b):
+        if a == b:
+            return -1
+        else:
+            return max(len(a), len(b))
