@@ -1,0 +1,13 @@
+class Solution:
+    def checkPerfectNumber(self, num):
+        if num<=1:
+            return false
+        b=[]
+        for i in range(1,num):
+            if num%i==0:
+                b.append(i)
+        if sum(b)==num:
+            return True
+        else:
+            return False
+
