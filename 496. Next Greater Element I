@@ -1,0 +1,16 @@
+class Solution:
+    def nextGreaterElement(self, nums1, nums2):
+        a=[]
+        for i in nums1:
+            found=False
+            for j in range(len(nums2)):
+                if nums2[j]==i:
+                    found=True
+                if found and nums2[j]>i:
+                    a.append(nums2[j])
+                    break
+            else:
+                a.append(-1)
+        return a
+                    
+                
