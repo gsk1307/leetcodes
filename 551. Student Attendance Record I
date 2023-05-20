@@ -1,0 +1,16 @@
+class Solution:
+    def checkRecord(self, s):
+        absences = 0
+        consecutive_lates = 0
+        for i in s:
+            if i == 'A':
+                absences += 1
+                consecutive_lates = 0 
+            elif i == 'L':
+                consecutive_lates += 1
+            else:
+                consecutive_lates = 0  
+
+            if absences >= 2 or consecutive_lates >= 3:
+                return False
+        return True
