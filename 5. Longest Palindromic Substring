@@ -1,0 +1,17 @@
+class Solution:
+    def longestPalindrome(self, s):
+        n=len(s)
+        maxlgt=1
+        start=0
+        for i in range(n):
+            for j in range(i,n):
+                a=1
+                for k in range(0,((j-i)//2)+1): #check palindrome
+                    if (s[i+k]!=s[j-k]):
+                        a=0
+                if (a!=0 and (j-i+1)>maxlgt): #palindrome
+                    a=i
+                    maxlgt=j-i+1
+        return maxlgt
+
+                
