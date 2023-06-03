@@ -1,0 +1,13 @@
+class Solution:
+    def removeDuplicates(self, nums):
+        count=1
+        dupli_count=1
+        for i in range(1,len(nums)):
+            if nums[i]==nums[i-1]:
+                dupli_count += 1
+            else:
+                dupli_count=1
+            if dupli_count<=2:
+                nums[count]=nums[i]
+                count+=1
+        return count
