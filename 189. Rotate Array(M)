@@ -1,0 +1,7 @@
+class Solution:
+    def rotate(self, nums, k):
+        n=len(nums)
+        k=k%n
+        temp=nums[:] #create a copy of the array
+        for i in range(n):
+            nums[(i+k)%n]=temp[i]
