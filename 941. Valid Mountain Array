@@ -1,0 +1,14 @@
+class Solution:
+    def validMountainArray(self, arr):
+        if len(arr)<=2:
+            return False
+        left=0
+        right=len(arr)-1
+        while left < right:
+            if arr[left]>=arr[left+1] or arr[right]>=arr[right-1]:
+                return False
+            if arr[left]<arr[left+1]:
+                left=left+1
+            if arr[right]<arr[right-1]:
+                right=right-1
+        return left==right-1
