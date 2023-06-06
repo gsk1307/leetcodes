@@ -1,0 +1,12 @@
+class Solution:
+    def numUniqueEmails(self, emails):
+        uniqueemails = set()
+        for email in emails:
+            localname, domainname = email.split("@")
+            localname=localname.replace(".","")
+            plusindex = localname.find("+")
+            if plusindex != -1:
+                localname = localname[:plusindex]
+            actualemail = localname +"@"+domainname
+            uniqueemails.add(actualemail)
+        return len(uniqueemails)
