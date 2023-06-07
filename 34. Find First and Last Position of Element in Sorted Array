@@ -1,0 +1,14 @@
+class Solution:
+    def searchRange(self, nums, target):
+        a=[]
+        if target in nums:
+            b=nums.index(target)
+            a.append(b)
+            c=b
+            while c<len(nums)-1 and nums[c+1]==target:
+                c=c+1
+            a.append(c)       
+        
+        else:
+            return [-1,-1]
+        return a
