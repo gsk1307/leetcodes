@@ -1,0 +1,34 @@
+class Solution:
+    def solveSudoku(self, board):
+        def is_valid(board,row,col,num):
+            #check if the number already exists in the row
+            for i in range(9):   
+                if board[row][i]==num:
+                    return False
+            #check if the number already exists in the column
+            for i in range(9):
+                if board[i][col]==num:
+                    return False
+                
+            #check if the numbeer already exists in the 3*3 sub grid
+            start_row=(row//3)*3
+            start_col=(col//3)*3
+            for i in range(3):
+                for j in range(3):
+                    if board[start_row+i][start_col+j]==num:
+                        return False
+            return True
+        def solve(board):
+            for row in range(9):
+                for col in range(9):
+                    if board[row][col]=='.':
+                        for num in '123456789':
+                            if is_valid(board,row,col,num):
+                                board[row][col]=num
+                                if solve(board):
+                                    return True
+                                board[row][col]='.' #undo the choice
+                        return False #no valid number found
+            return True #sudoko solved
+        solve(board)
+       
