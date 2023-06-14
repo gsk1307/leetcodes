@@ -1,0 +1,10 @@
+class Solution:
+    def groupAnagrams(self, strs):
+        a={}  #anagram group, to store the groups of anagarams in dict
+        for i in strs:
+            b=''.join(sorted(i)) #we sort its characters and join them back into a string 
+            if b in a:
+                a[b].append(i)
+            else:
+                a[b]=[i]
+        return list(a.values()) #dictionary values
