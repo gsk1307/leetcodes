@@ -1,0 +1,15 @@
+class Solution:
+    def divide(self, dividend, divisor):
+        negitive = (dividend < 0) != (divisor < 0) #to know the sign of quotient
+        #convertion to the absolute values
+        dividend=abs(dividend)
+        divisor=abs(divisor)
+        quotient=0
+        while dividend >= divisor:
+            dividend=dividend-divisor
+            quotient=quotient+1
+        if negitive:
+            quotient= -quotient
+        return quotient
+
+
