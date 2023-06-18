@@ -1,0 +1,13 @@
+class Solution:
+    def maxArea(self, height):
+        l,r,max_area = 0,len(height)-1,0  #l is left and r is right
+        while l<r:
+            h=min(height[l],height[r]) #min height
+            w=r-l #width
+            area=h*w
+            max_area=max(max_area,area) #update the max area
+            if height[l]<height[r]:
+                l=l+1
+            else:
+                r=r-1
+        return max_area
