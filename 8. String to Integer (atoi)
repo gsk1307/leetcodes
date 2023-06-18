@@ -1,0 +1,22 @@
+class Solution:
+    def myAtoi(self, s):
+        s=s.strip() #removing whithespaces
+
+        #to dtermine sign
+        sign=1 
+        if len(s)>0 and (s[0]=='+' or s[0]=='-'):
+            if s[0]=='-':
+                sign=-1
+            s=s[1:]
+
+        #read digits
+        result=0
+        i=0
+        while i<len(s) and s[i].isdigit():
+            result=result*10+int(s[i])
+            i=i+1
+        result=result*sign #apply sign
+        result=max(min(result,2**31-1),-2**31) #range constrain
+        return result
+        
+        
