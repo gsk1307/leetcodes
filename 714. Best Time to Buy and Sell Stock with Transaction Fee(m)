@@ -1,0 +1,10 @@
+class Solution:
+    def maxProfit(self, prices, fee):
+        cash=0
+        hold=-prices[0]
+        for i in range(len(prices)):
+            newcash=max(cash,hold+prices[i]-fee)
+            newhold=max(hold,cash-prices[i])
+            cash=newcash
+            hold=newhold
+        return cash
