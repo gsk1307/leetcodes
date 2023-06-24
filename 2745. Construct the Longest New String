@@ -1,0 +1,9 @@
+class Solution:
+    def longestString(self, x, y, z):
+        max_length=min(x,y)*2
+        if z>0:
+            max_breaks=min(z,abs(x-y))
+            max_length+=max_breaks*2
+        return max_length
+        
+        
