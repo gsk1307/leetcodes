@@ -1,0 +1,12 @@
+class Solution:
+    def maximumNumberOfStringPairs(self, words):
+        count=0
+        new_words=set()              #set does not allow duplicates
+        for i in words:
+            if i[::-1] in new_words:  #i[::-1] is used to reverse the string
+                count+=1
+                new_words.remove(i[::-1])
+            else:
+                new_words.add(i)
+        return count
+        
